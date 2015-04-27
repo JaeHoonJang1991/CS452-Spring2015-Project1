@@ -1,3 +1,11 @@
-name, date, description
+Jae Hoon Jang Houchao Gan 
+
+Well let me exaplain it later, since I am still working on it.
+
+for now you need to activate game by push any botton in the keybaord.
+
+To move around you need to wasd.
+
+Score should apear in the colsole.
 
 be sure to include complete details of how to interact with your game, the scoring system, and how to win

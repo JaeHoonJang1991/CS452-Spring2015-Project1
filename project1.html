@@ -9,13 +9,12 @@ void main()
   gl_Position = vPosition;
 }
 </script>
-
 <script id="fragment-shader" type="x-shader/x-fragment">
 precision mediump float;
 
 void main()
 {
-gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
+    gl_FragColor = vec4( 0.04, 0.35, 0.27, 1.0 );
 }
 </script>
 <script type="text/javascript" src="../Common/webgl-utils.js"></script>
@@ -24,7 +23,7 @@ gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
 <script type="text/javascript" src="project1.js"></script>
 </head>
 <body>
-<canvas id="gl-canvas" width="512" height="512">
+<canvas id="gl-canvas" width="300" height="300">
 Oops ... your browser doesn't support the HTML5 canvas element
 </canvas>
 </body>
