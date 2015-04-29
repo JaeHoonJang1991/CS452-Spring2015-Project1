@@ -1,10 +1,12 @@
 var gl;
 var points = [];
 //Star
-var PointX = 0;
-var PointY = 0.1;
+var PointX = ((Math.floor(Math.random()*20))-10)/10;
+var PointY = ((Math.floor(Math.random()*20))-10)/10;
 //make it one random
 var once = 1;
+
+var direction = 0; 
 
 //C letter
 var CX = 0;
@@ -85,7 +87,7 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 	*/
-//==========================================================================		
+//========================== The control parts starts here, and all the shapes is in here
 		gl.clearColor( 1.0, 0.82, 0.01, 1.0 );
         var key = String.fromCharCode(event.keyCode);
         switch( key ) {
@@ -94,8 +96,8 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 				PointY = PointY+0.1+0.001;
 			}
 			PointY=(Math.floor(PointY*10))/10;
-			console.log("W");
-			console.log(PointY);
+			// console.log("W");
+			// console.log(PointY);
 			Score = Score - 10;
             break;
 
@@ -104,8 +106,8 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 				PointY = PointY-0.1+0.001;
 			}
 			PointY=(Math.floor(PointY*10))/10;
-			console.log("S");
-			console.log(PointY);
+			// console.log("S");
+			// console.log(PointY);
 			Score = Score - 10;
             break;
 
@@ -115,8 +117,8 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 			}
 			//console.log(PointX);
 			PointX=(Math.floor(PointX*10))/10;
-			console.log("D");
-			console.log(PointX);
+			// console.log("D");
+			// console.log(PointX);
 			Score = Score - 10;
             break;
 			
@@ -125,19 +127,31 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 				PointX = PointX-0.1+0.001;
 			}
 			PointX=(Math.floor(PointX*10))/10;
-			console.log("A");
-			console.log(PointX);
+			// console.log("A");
+			// console.log(PointX);
 			Score = Score - 10;
             break;
 			
-          //case '1':
-          //  PointX=0;
-		//	PointY=0.1;
-        //    break;
+          case 'R':
+			PointX = ((Math.floor(Math.random()*20))-10)/10;
+			PointY = ((Math.floor(Math.random()*20))-10)/10;
+			 Ceat = 0;
+			 Leat = 0;
+			 Aeat = 0;
+			 Reat = 0;
+			 Keat = 0;
+			 Seat = 0;
+			 Oeat = 0;
+			 Neat = 0;
+			 once = 1;
+			 Score= 0;
+			OrderCounter = 0;
+            break;
         }
 	
 	var num = 0;
-	
+
+//========================This is the star you control	
 	 var vertices1 = new Float32Array([
 		PointX+0.05,	PointY,//0.1,0.2,
 		PointX+0.1, 	PointY+0.08,//0,0.05,
@@ -162,7 +176,7 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 // Associate our shader variables with our data buffer
 	render(num);
 	
-//================================================================================
+//=========================random number to put letter in random place
 	
 	if(once == 1){
 		CX = ((Math.floor(Math.random()*20))-10)/10;
@@ -181,9 +195,18 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		OY = ((Math.floor(Math.random()*20))-10)/10;
 		NX = ((Math.floor(Math.random()*20))-10)/10;
 		NY = ((Math.floor(Math.random()*20))-10)/10;
-	}
-
-//=================================================================================	
+//===========================This will make letter move  move
+	} 
+	// else {
+		// for (var i = 0; i < 16; i++){
+			// direction = (Math.floor(Math.random()*10);
+			// if (direction == 3){
+			// }
+		// }
+		
+		
+	// }
+//======================this is "C"
 	
 	if(Ceat == 0){
 		var verticesC = new Float32Array([
@@ -225,20 +248,20 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (CX == PointX){
-				console.log("got CX");
+//				console.log("got CX");
 			if (CY == PointY){
 				Ceat = 1;
 				if (OrderCounter == 0){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got CY");
+//				console.log("got CY");
 			}
 		}
 		
 	}
 
-//=================================================================================	
+//======================this is "L"
 	
 	if(Leat == 0){
 		var verticesL = new Float32Array([
@@ -272,20 +295,20 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (LX == PointX){
-				console.log("got LX");
+//				console.log("got LX");
 			if (LY == PointY){
 				Leat = 1;
 				if (OrderCounter == 1){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got LY");
+//				console.log("got LY");
 			}
 		}
 		
 	}
 	
-//=================================================================================	
+//====================this is "A"
 	
 	if(Aeat == 0){
 		var verticesA = new Float32Array([
@@ -352,20 +375,20 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (AX == PointX){
-				console.log("got AX");
+//				console.log("got AX");
 			if (AY == PointY){
 				Aeat = 1;
 				if (OrderCounter == 2){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got AY");
+//				console.log("got AY");
 			}
 		}
 		
 	}
 		
-//=================================================================================	
+//=====================this is "R"
 	
 	if(Reat == 0){
 		var verticesR = new Float32Array([
@@ -423,20 +446,20 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (RX == PointX){
-				console.log("got RX");
+//				console.log("got RX");
 			if (RY == PointY){
 				Reat = 1;
 				if (OrderCounter == 3){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got RY");
+//				console.log("got RY");
 			}
 		}
 		
 	}
 	
-//=================================================================================	
+//===================this is "K"
 	
 	if(Keat == 0){
 		var verticesK = new Float32Array([
@@ -486,20 +509,20 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (KX == PointX){
-				console.log("got KX");
+//				console.log("got KX");
 			if (KY == PointY){
 				Keat = 1;
 				if (OrderCounter == 4){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got KY");
+//				console.log("got KY");
 			}
 		}
 		
 	}
 	
-//=================================================================================	
+//====================this is "S"
 	
 	if(Seat == 0){
 		var verticesS = new Float32Array([
@@ -558,20 +581,20 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (SX == PointX){
-				console.log("got SX");
+//				console.log("got SX");
 			if (SY == PointY){
 				Seat = 1;
 				if (OrderCounter == 5){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got SY");
+//				console.log("got SY");
 			}
 		}
 		
 	}
 	
-//=================================================================================	
+//=====================this is "O"
 	
 	if(Oeat == 0){
 		var verticesO = new Float32Array([
@@ -621,20 +644,20 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (OX == PointX){
-				console.log("got OX");
+//				console.log("got OX");
 			if (OY == PointY){
 				Oeat = 1;
 				if (OrderCounter == 6){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got OY");
+//				console.log("got OY");
 			}
 		}
 		
 	}
 	
-//=================================================================================	
+//===================this is "N"
 	
 	if(Neat == 0){
 		var verticesN = new Float32Array([
@@ -676,14 +699,14 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 		gl.enableVertexAttribArray( vPosition ); 
 		render(num)
 		if (NX == PointX){
-				console.log("got NX");
+//				console.log("got NX");
 			if (NY == PointY){
 				Neat = 1;
 				if (OrderCounter == 7){
 					Score = Score + 1000;
 				}
 				OrderCounter = OrderCounter + 1;
-				console.log("got NY");
+//				console.log("got NY");
 			}
 		}
 		
@@ -706,7 +729,9 @@ gl.viewport( 0, 0, canvas.width, canvas.height );
 	// console.log("OX = " + OX + " OY = " + OY);
 	// console.log("NX = " + NX + " NY = " + NY);
 	console.log("Score = " + Score);
-	console.log("OrderCounter = " + OrderCounter);
+	if (OrderCounter == 8){
+		console.log("Press R to reset the game");
+	}
 	
 	once = 0;
 };

@@ -1,6 +1,6 @@
-Jae Hoon Jang Houchao Gan 
+Jae Hoon Jang, Houchao Gan 
 
-Well let me exaplain it later, since I am still working on it.
+Well let me exaplain it later, since We am still working on it.
 
 for now you need to activate game by push any botton in the keybaord.
 
@@ -9,3 +9,46 @@ To move around you need to wasd.
 Score should apear in the colsole.
 
 be sure to include complete details of how to interact with your game, the scoring system, and how to win
+
+// How to play=================
+We would you like to open the console parts to see the print score.
+game start when you press any key on keybaord.
+
+Every move cost 10 score.
+Every letter got it in right order give you 1000 points
+if you got letter in wrong order you get 0 points
+you can move around with "asdw"
+Also you can always reset the game with "R"
+
+// note ===================
+
+Well the original plan was making snake game out of Clarkson letters.
+However, We had so much trouble with self moving and changing direction, We had to stick with the my lab 2.
+
+The addition of numbers has rounding error.
+add 0.1 some time become:
+adding 0.100000000000000000003
+adding 0.099999999999999999999
+
+We had to use Math.floor to make it into whole number.
+However, floor function is rounding down the number, so the number become original number after adding 0.099999999999999999999
+We had to add 0.001 to round up the number and snip it.
+
+all of the graphic is started left bottom conner, so each points addition of number how far from the original point.   
+all the graphic is drawn in triangle, so A happen to be 36 points.
+
+Because of rounding error, the score and delete system didn't work.
+but now it go fixed.
+
+// bugs in game ==========
+
+since there isn't checking system for overlap between letters, sometime it get overlap each other.
+rarely your start might start under a letter. 
+
+// improve for code =============
+this code use a lot of if statement. 
+this can be improve by array system. ( which we fail in first project)
+
+I wish to show the number on screen and order of letter you ate on screen.
+
+random function is add   
